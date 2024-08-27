@@ -15,29 +15,29 @@ import java.util.stream.Collectors;
 
 @Data
 @Entity
-@Table(name = "vue_utilisateur_administrateur") // Nom de la vue
+@Table(name = "utilisateur_administrateur_vue") // Nom de la vue
 public class UtilisateurAdministrateurVue implements UserDetails {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "id_personne")
     private Integer id;
 
-    @Column(name = "nom")
+    @Column(name = "nom_personne")
     private String nom;
 
-    @Column(name = "prenom")
+    @Column(name = "prenom_personne")
     private String prenom;
 
     @Column(name = "email")
     private String email;
 
-    @Column(name = "motDePasse")
+    @Column(name = "mot_de_passe") // Assurez-vous que le nom correspond à celui de la vue
     private String motDePasse;
 
-    @Column(name = "dateCreation")
+    @Column(name = "date_creation")
     private Timestamp dateCreation;
 
-    @Column(name = "photoDeProfil")
+    @Column(name = "photo_de_profil")
     private String photoDeProfil;
 
     @Column(name = "taille")
@@ -52,29 +52,20 @@ public class UtilisateurAdministrateurVue implements UserDetails {
     @Column(name = "sexe")
     private String sexe;
 
-    @Column(name = "conditionsMedicales")
+    @Column(name = "conditions_medicales")
     private String conditionsMedicales;
 
-    @Column(name = "preference")
-    private String preference;
+    //@Column(name = "preference")
+    //private String preference;
 
-    @Column(name = "niveauAbonnement")
-    private String niveauAbonnement;
+    //@Column(name = "niveau_abonnement")
+   // private String niveauAbonnement;
 
-    @Column(name = "utilisateurDateModification")
+    @Column(name = "date_modification") // Assurez-vous que le nom correspond à celui de la vue
     private Timestamp utilisateurDateModification;
 
-    @Column(name = "niveauAdmin")
-    private String niveauAdmin;
-
-    @Column(name = "privileges")
-    private String privileges;
-
-    @Column(name = "administrateurDateModification")
-    private Timestamp administrateurDateModification;
-
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_role")
+    @JoinColumn(name = "role_id") // Assurez-vous que le nom correspond à celui de la vue
     private Role role;
 
     @Override

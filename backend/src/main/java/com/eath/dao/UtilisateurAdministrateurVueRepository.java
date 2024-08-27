@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 @Repository
-public interface UtilisateurAdministrateurVueRepository extends JpaRepository<UtilisateurAdministrateurVue, Long> {
+public interface UtilisateurAdministrateurVueRepository extends JpaRepository<UtilisateurAdministrateurVue, Integer> {
     Optional<UtilisateurAdministrateurVue> findByEmail(String email);
 }

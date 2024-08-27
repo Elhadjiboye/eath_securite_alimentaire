@@ -6,6 +6,6 @@ import com.eath.entite.UtilisateurAdministrateurVue;
 import java.util.Optional;
 
 
-public interface UtilisateurAdministrateurVueService {
+public interface UtilisateurAdministrateurVueService  {
     Optional<UtilisateurAdministrateurVue> findByEmail(String email);
 }

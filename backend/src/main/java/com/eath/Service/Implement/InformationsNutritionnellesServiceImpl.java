@@ -4,7 +4,6 @@ import com.eath.Service.InformationsNutritionnellesService;
 import com.eath.dao.InformationsNutritionnellesRepository;
 import com.eath.dao.ProduitsRepository;
 import com.eath.entite.InformationsNutritionnelles;
-import com.eath.entite.Produits;
 import com.eath.exception.InformationsNutritionnellesNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

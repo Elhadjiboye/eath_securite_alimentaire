@@ -1,6 +1,5 @@
 package com.eath.web;
 
-import com.eath.web.LoginRequest; // Assurez-vous que l'import est correct et nécessaire
 import com.eath.Service.AdministrateurService;
 import com.eath.Service.UtilisateurAdministrateurVueService;
 import com.eath.Service.UtilisateursService;
@@ -9,7 +8,6 @@ import com.eath.entite.Administrateur;
 import com.eath.entite.Role;
 import com.eath.entite.Utilisateurs;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -77,7 +75,7 @@ public class AuthController {
     public String login(@RequestBody LoginRequest loginRequest) {
         try {
             Authentication authentication = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword())
+                    new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getMotDePasse())
             );
             SecurityContextHolder.getContext().setAuthentication(authentication);
 
